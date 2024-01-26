@@ -1,0 +1,194 @@
+@charset "utf-8";
+
+*,*:after,*:before {box-sizing:border-box;}
+body {font-size:0.9rem;}
+a {text-decoration:none;color:#333;}
+#header {height:50px;position:relative;line-height:50px;}
+#header h1 {position:absolute;left:0;}
+#header h1 a img {width:50px;}
+
+#head {position:relative;}
+
+#menu {text-align: right;} /*안에 요소들이 글자(인라인)라서 가능*/
+#menu a {display:inline-block;margin-right:10px;font-weight: bold;}
+#menu button {border:none; background:none;vertical-align: middle;}/* vertical-align: middle; 해서 글씨(인라인)들이
+                                                                         이미지 기준 수직중앙으로 정렬된거임 
+                                                                         블록요소는 안됨..*/
+button img {width:60%; }/*배경투명한 png대체가능*/  
+.menu ul {padding:0 10px 0;height:100%;}
+.mm >li {padding:15px 0; border-bottom:1px solid #ece6e3;position: relative;
+         text-indent: 20px;}       
+.mm li img {position: absolute;right:10px;top:15px;width:15px;}    
+
+.menu {z-index: 100000; font-weight: bold; font-size: 0.8rem; 
+    height:100%; position: fixed;width:75%;top:0;
+    background:#fff;
+    right:-75%;/* right:-75%;*/} 
+
+
+.menu ul.mm li a {color:#483834;font-size:13px;}
+.sub {text-align: center; display: none;}
+.sub li {padding:0;}
+.sub li a {padding:3px 0;display:block;}         
+
+.head {height:50px;background: #fe7c98;line-height:50px;}
+.head>ul>li {margin-right:1rem;}
+.head>ul>li:last-child {margin-right:0;}           
+.fr {padding-left:10px;}        
+
+.head ul li {float:left;}          
+.head ul li.search {float:right;text-align:right;width:10rem;padding-top:13px;}    
+.search img {width:55%;}
+.head a {color:#fff;}
+
+.sub {padding:0 15px; }
+.sub >li {height:40px;line-height:40px;text-align:left;text-indent:15px;}
+.sub li {border-bottom:1px solid #ece6e3;}
+.sub li:last-child {border-bottom:none;}
+
+.cross{background:none;  position:absolute;  top:0; left:-40px;
+        padding:0 15px 0; color:#666;   border:0;  font-size:3.5rem;
+        line-height:65px; font-weight:bold;  cursor:pointer; outline:none;
+        z-index:100000; display:none;}
+
+
+
+#main {width: 100%;} 
+#main img {width: 100%;} /* 배너크기 100%줄것 브라우저넓이가 변해도 100%쓰게 */
+
+#slide {width: 100%; position: relative; overflow: hidden;} /*요소가 나열될때 오버플로우 히든 안하면 
+                                                             가로스크롤 생김*/
+
+#slide img {width: 100%;} 
+#slide ul {position: relative; left: 0; width: 300%;} /*li가 3개니까 300%*/
+#slide ul li {width: 33.33%; float: left;} /*li는 100%중에 3요소가 차지해야하니까 33.33%*/      
+
+#roll {position: absolute;bottom: 5px; left: 50%; transform: translateX(-50%);}
+#roll a {display: inline-block; width: 10px; height: 10px; border-radius: 5px;  /* 라디오스 5px 주면 정원*/
+         background: #fff; margin-left: 5px;} 
+#roll a:nth-child(3) {margin-right: 0;} /*오른쪽으로 뛰는데 세번째에는 떨어질 필요없으니 해준거*/
+#roll .on {background: #000;} /* 인디케이터 형성 첫번째 원 검정색 만듬 */
+
+#list {width: 95%; margin: 0 auto 3rem;position: relative;padding-bottom: 3rem;}
+#list li {float: left; width: 50%; padding-right: 3px;} /*박스사이징 넣어서 가능 = 합이 103*/
+#list h3 {text-align: center; margin: 2rem 0;}
+span {display: block; height: 20px;}
+.im {margin: 10px 0 8px 0;}
+.im img {height: 18px;}
+.txt {font-size: 11px;} /* 상시진행 글에 위에 글보다 작게 가독성을 높힘 */
+.txt1 {font-size: 10px;}
+#list ul>li> a>img {width: 100%;} /*이미지 요소들이 각 자리에서 100% 자리를 가질수있게
+                                     이렇게 설정안하면 서로 뒤엉킴*/
+ 
+ 
+#roll2 {position: absolute;bottom: 5px; left: 50%; transform: translateX(-50%);}
+#roll2 a {display: inline-block; width: 10px; height: 10px; border-radius: 5px;  
+          background: tomato; margin-right: 5px;} 
+ #roll2 a:nth-child(3) {margin-right: 0;} 
+ #roll2 .active {background: purple;}
+
+ #list1 {background: url(../img/back.jpg) no-repeat; /*파일이 css파일 밖에 있으므로 ../
+                                                         불러온 파일은 무한으로 바닦에 깔리니
+                                                          중복되지 않게 no-repeat
+                                         배경을 꽉채우는 기능 (가로가 늘어나면 세로도 자동으로 늘어나는)
+                                                         그것이 !baclground-size:cover;! 
+                                                 100px 200px또는 100px 이런식으로도 가능
+                                            근데 커버를 가장많이사용  너무작은해상도 이미지 비추
+                                            배너를 제작할때 가운데 위주로 제작하면 나중에 늘려도갠춘 */
+        background-size: cover;}
+#list1 h3 {text-align: center; padding: 2rem 0;}
+.ban {text-align: center;}
+.ban img {width: 90%;} /* 100% 너무 커서 살짝 줄인것뿐 */
+
+#store {text-align: center;}
+#store h3 {text-align: center; padding: 2rem 0;}
+#store img {width: 95%;}
+
+#deli {text-align: center;}  /* 이미지는(인라인요소) 텍얼센 먹는다 */
+#deli h3 {text-align: center; padding: 2rem 0;} 
+#deli img {width: 95%;}
+
+#sns {text-align: center;} /* 부모부터 텍얼센 선 줘야함 */
+#sns h3 {text-align: center; padding: 2rem 0;}
+#sns ul {text-align: center;}
+#sns ul li {display: inline-block;}
+#sns ul li img {width: 50px; margin-right: 10px;}
+#sns ul li:last-child img {margin-right: 0;}
+.line {position: relative; text-align: center; padding: 40px 16px 0 16px;
+       margin-bottom: -14px;}
+.line img {height: 100%;}
+.line:before {position: absolute; top: 23px;left: 4.4%; display: inline-block;
+              text-align: center; content: ""; width: 91.2%; height: 1px;
+              background: #dcd7d1;}
+    /*정리하자면 이미지 라인에 가상으로 앱솔루트 주고 콘텐츠로 기다란 선으로 만든것
+       ?left 값을 늘리니까 옆으로 마진이 생김?*/
+/*가상 클래스는 본인한테 relative 를 주고 현위치에서 absolute를 적용할수있다 */
+.line a {position: absolute; top: 12px;left: 50%;
+         transform: translateX(-50%); /* 왼쪽 50% 가운데 정렬*/
+        display: inline-block; height: 8px;
+        text-align: center; z-index: 9;}
+                                                    
+#listimg {width: 97%; margin: 3rem auto;}
+#listimg ul li {float: left; width: 50%; padding-right: 3px; padding-bottom: 2px;}
+#listimg ul li img{ width: 100%; } /* 박스사이징이 있으니까 리스트박스크기 덜 계산해도됨 */
+
+#footer {border-top: 1px solid #ffb02d; margin-top: 20px;padding: 0 10px;}
+#fmenu {padding: 20px 0;}
+#fmenu li a {color: #726454; font-size: 0.7rem;}
+#fmenu li {float: left; padding-right: 4px;}
+a.pr {color: #ff7c98!important; font-weight: bold;}/*important를 해줘야 컬러가 바뀌네
+                                                      앞에서 폰트색을 결정해줘서 뒤에서 그게 먼저
+                                                     우선이 되게 설정했나보다*/
+
+
+
+.foot li {width: 16.66%;float: left;padding-left: 3px;}
+.foot li a {display: block; width: 100%; height: 80px; 
+    /*이미지 크기가 다를때 높이로 맞출수 있다(미세한차이일때)
+         차이가 많이 나면 포토샵 조절해서와야함*/
+            padding: 5px 0 5px; border-radius: 5px;
+            border:1px solid #d1cecc; color:#726454;
+            font-size: 10px; text-align: center; line-height: 1.1;}
+
+.foot li img {width: auto;}
+.foot span {display: block;}
+.fs {padding-bottom: 15px;}
+
+.customer {width: 66%; float: left; padding-top: 20px;}
+.center {padding-right: 10px; float: left;}
+.tel {float: left;}
+
+.center a {width: 81px; height: 30px; border-radius: 3px;
+           background-color: #d3c1ab; color:#fff; font-weight: bold;
+           font-size: 13px; text-align: center; line-height: 30px;
+           display: block;}
+
+.tel a { height: 30px; padding-left: 25px; color: #c8baa9;
+         font-weight: bold; font-style: 13px;
+        background: url(../img/icon_customer_center.gif) no-repeat 0 50%;/*좌우 주지마 수직 중앙*/
+        background-size: 20px 20px; line-height: 30px; }
+.site {position: relative; float: right; width: 33%; background: #fff;
+       padding: 16px 0 0 0; z-index: 10;}
+.site ul { display: none; position: absolute;left: 0;bottom: 28px;
+          width: 100%;padding: 5px 0;border-radius: 5px 5px 0 0;
+          border: 1px solid #d1cecc; background: #fff;} /* ex)상품목록*/ 
+.site a { display: block; height: 25px; padding-left: 15px;
+          color:#726454; line-height: 25px;}
+                
+.site button {width: 100%; height: 32px; padding-left: 11px;  /*css로 버튼외형 만들어주는것*/
+              border-radius: 5px; border: 1px solid #d1cecc;
+            background: transparent url(../img/family_size_off.png) no-repeat 100% 0;
+                         /*red url 하면 url배경으로 레드가 깔린다*/
+            color: #b1ab9f;    font-size: 9px; text-align: left;
+            box-shadow: 2px 2px 2px 0px rgb(234 233 232); }
+            /* 4번째는 요소와 그림자에 거리 */
+.info {float: left; padding: 10px 0 30px;
+       color: #635b56; font-size: 11px;
+       line-height: 1.6;}
+
+.info1,.info2 {float: left; margin-right: 15px;}
+address {clear: both; float:left; margin-right: 15px;} /* clear both 안해주면 깨짐 */
+                            
+
+
+

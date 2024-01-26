@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+*,*:after, *:before {box-sizing: border-box;}
+
+a {text-decoration: none; color: #131313;}
+header {width: 100%; position: fixed; top: 0; /*꼭대기에 고정 움직이면 레프트 0도 줘라*/
+    height: 50px; background: #fff; line-height: 50px;} /*본래사이트는 배경은 흰색이 아니라 투명이다  
+                                                   안주면 요소가 비춘다 그래서 백그라운드 색을 줘야함*/
+
+h1 {font-size: 1.3rem; text-align: center;}     
+.s {position: absolute; top: 9px; right: 5px;}     
+.hamburger {position: absolute; top: 0; left: 0;
+            background: none; border: 0; font-size: 1.4rem; /*햄버거는 코드를 사용한 글자요소*/
+            font-weight: bold; padding: 0 15px;
+            cursor: pointer; /*마우스 올렸을때 손가락으로 바꾸기 디폴트는 반대*/
+            line-height: 45px; /*라인 하이트를 잡아서 영역을 위아래로 넓힘*/
+            outline: none; /*햄버거 호버했을때 만약 테두리가 보인다면 그걸 없애는 기능*/
+            z-index: 9999; /*앱솔루트해서 밑에있는 요소를 위로 위치시킬때 주는것 (무조건크게)
+                            !햄버거를 메뉴를 클릭했을때 그 메뉴요소가 햄버거 위로 올라와서
+                            보이지않는다면 햄버거에 z-index를 주면 된다!*/
+}               
+
+.menu {background: #131313; font-size: 0.8rem;
+       font-weight: bold; height: 100%; position: fixed; /*fuxed를 시키돼 높이를 100% 줘야함.
+                                                         높이를 100 주지않으면 요소높이값만 차지함*/
+    left: -200px; top: 0;width: 200px; padding-top: 30px;} /*햄버거 꽉차게 할거면 위드 100%*/
+.menu ul { height: 100%; margin: 0; padding: 0;} /*메뉴높이를 준 만큼 안에 ul도 똑같이줘라 아니면깨짐*/
+.menu ul li a { color: #fff;}
+.menu li {padding: 10px 0 10px 0; text-indent: 20px; position: relative;} 
+/*브랜드,이미지 위치조정*/               /*부모 li에 relative 줘서 그요소에 오른쪽에 위치시킬수있다*/
+.menu li img {position: absolute;right: 10px;} /*부모안에 원하는 위치에 붙힌것*/
+ /*햄버거 메뉴를 전부 만들면 menu에 레프트 값만큼 - 를 줘서 숨기고 (현상황) 나중에 
+             호버하면 다시 튀어나오게 설정해야함.*/
+
+.cross {background: none; position: absolute; top: 10px;right: 3px;
+        color: #fff; border: 0; font-size: 2.5rem;
+        line-height: 45px;     font-weight: bold;    cursor: pointer;
+        outline: none; z-index:1000000;
+         
+}
+
+.sub {display:none;}
+.sub li {text-align: center; padding: 0;}
+.sub a {padding: 3px 0; display: block;}

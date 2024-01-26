@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+*,*:after, *:before {box-sizing: border-box;}
+
+a{text-decoration: none; color: #fff;}
+header {width: 100%;     background: #1d1f20;
+        height: 50px;    line-height: 50px;}
+
+header h1 {text-align: center;}
+.hamburger {
+           background: none;
+           position: absolute;top: 0;right: 0;
+           line-height: 45px;
+           padding: 0px 15px 0px 15px;
+           color: #fff; border: 0;
+           font-size: 1.4rem; font-weight: bold;
+           cursor: pointer; outline: none; z-index: 1000000;}
+
+.cross {background: none;
+        position: absolute; top: 0;right: 0;
+        padding: 0px 15px; color: #fff; border: 0;font-size: 3rem;
+        line-height: 65px;font-weight: bold;
+        cursor: pointer; outline: none; z-index: 100000;}
+
+.menu {width: 100%; font-size: 0.8rem; background: #131313;
+       font-weight: bold;}
+.menu li {padding: 15px 0; text-indent: 20px;}
+.menu ul li a:hover {}
